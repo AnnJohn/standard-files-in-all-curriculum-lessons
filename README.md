@@ -6,7 +6,7 @@ The license file contains our copyright information, which is very similar to a 
 
 These two files above are the same no matter what the lesson content is. 
 
-The .learn file is where you include tags to describe what’s covered in the lesson and this will of course vary depending on the content. 
+The .learn file allows us to add Github repositories as lessons in Learn. It is also where you include tags to describe what’s covered in the lesson and this will of course vary depending on the content. 
 
 In order to avoid manually creating these files every time you make a new lesson, we created a gem you install and run. 
 
@@ -16,6 +16,8 @@ Type  **"learn-write"** from the  command line in any directory where you want t
 The files will be created and the only thing that you'll have to update is the .learn file in Github.
 
 ## The .learn file
+
+This file is written using YAML, a human readable data serialization format. You can read more about YAML [here](http://docs.ansible.com/ansible/YAMLSyntax.html). It's important to note the `:` after the grouping name. It's equally important to not the space between the `-` and the tag or language name. Without this space, the piece of  curriculum can't be added to track on Learn.co.
 
 There are three categories of tags. One is simply called tags. Another is language, and the last is resources. Our ultimate goal with these tags is to make curriculum standardized and easily searchable. For now, here are some general tips for tagging. 
 
@@ -40,11 +42,10 @@ tags: methods, variable assignment, iteration
 
 tags: jquery, variable scope
 
+
 ## What Happens If I Don't Add in These Files?
 
-When you make a pull request, you'll see that some checks are failing. We've created a linter that checks for all these files so if you notice these failures with your PR, just use the gem to create those files. 
-
-
+We've created a linter that checks to make sure that all the above files have been added and have been added correctly. If you're missing any of these files or if, for example, there are problems with how you updated your .learn file, the linter will alert you to these failures when you make a Pull Request. 
 
 
 <a href='https://learn.co/lessons/standard-files-in-all-curriculum-lessons' data-visibility='hidden'>View this lesson on Learn.co</a>
